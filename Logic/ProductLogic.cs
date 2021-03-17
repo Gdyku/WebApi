@@ -7,10 +7,11 @@ using Models;
 using WebApi.DTOModels;
 using AutoMapper;
 using System.Threading;
+using WebApi.Interfaces;
 
 namespace WebApi.Logic
 {
-    public class ProductLogic
+    public class ProductLogic : IProductLogic
     {
         private readonly IMapper _mapper;
         private readonly DataContext _context;
@@ -44,17 +45,17 @@ namespace WebApi.Logic
             await _context.SaveChangesAsync();
         }
 
-        public async Task EditProduct(Guid ID, ProductDTO updateProduct)
+        public async Task EditProduct(ProductDTO updateProduct)
         {
-            var product = await _context.Products.FirstOrDefaultAsync(p => p.ID == ID);
+            var product = await _context.Products.FirstOrDefaultAsync(p => p.ID == updateProduct.ID);
 
             if (product == null)
                 throw new Exception("Couldn't find product");
 
-            product.Name = updateProduct.Name ?? product.Name;
-            product.Price = updateProduct.Price ?? product.Price;
-            product.Description = updateProduct.Description ?? product.Description;
-            product.Category = updateProduct.Category ?? product.Category;
+            product.Name = updateProduct.Name;
+            product.Price = updateProduct.Price;
+            product.Description = updateProduct.Description;
+            product.Category = updateProduct.Category;
 
             await _context.SaveChangesAsync();
         }

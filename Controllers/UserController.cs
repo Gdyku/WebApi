@@ -16,13 +16,13 @@ namespace WebApi.Controllers
         {
             _userLogic = userLogic;
         }
-        [HttpGet("/getusers")]
+        [HttpGet("getusers")]
         public async Task<List<UserDTO>> GetUsersAsync()
         {
             return await _userLogic.GetUsers();
         }
 
-        [HttpGet("/getuser/id")]
+        [HttpGet("getuser/{id}")]
         public async Task<UserDTO> GetUserAsync(Guid ID)
         {
             return await _userLogic.GetUser(ID);

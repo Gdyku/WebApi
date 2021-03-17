@@ -20,28 +20,28 @@ namespace WebApi.Controllers
             _productLogic = productLogic;
         }
 
-        [HttpGet("/getproducts")]
+        [HttpGet("getproducts")]
         public async Task<List<ProductDTO>> GetProductsAsync()
         {
             return await _productLogic.GetProducts();
         }
 
-        [HttpGet("/getproduct/id")]
+        [HttpGet("getproduct/{id}")]
         public async Task<ProductDTO> GetProductAsync(Guid ID)
         {
             return await _productLogic.GetProduct(ID);
         }
 
         [HttpPost]
-        public async Task CreateProductAsync(ProductDTO product)
+        public async Task CreateProductAsync([FromBody]ProductDTO product)
         {
             await _productLogic.CreateProduct(product);
         }
 
         [HttpPut]
-        public async Task EditProductAsync(Guid ID, ProductDTO product)
+        public async Task EditProductAsync([FromBody]ProductDTO product)
         {
-            await _productLogic.EditProduct(ID, product);
+            await _productLogic.EditProduct(product);
         }
 
         [HttpDelete]

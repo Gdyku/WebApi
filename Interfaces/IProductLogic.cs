@@ -11,7 +11,7 @@ namespace WebApi.Interfaces
         Task<List<ProductDTO>> GetProducts();
         Task<ProductDTO> GetProduct(Guid ID);
         Task CreateProduct(ProductDTO product);
-        Task EditProduct(Guid ID, ProductDTO updateProduct);
+        Task EditProduct(ProductDTO updateProduct);
         Task DeleteProduct(Guid ID);
     }
 }

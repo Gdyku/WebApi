@@ -20,7 +20,7 @@ namespace WebApi.Controllers
             _commentLogic = commentLogic;
         }
 
-        [HttpGet("/getcomments")]
+        [HttpGet("getcomments")]
         public async Task<List<CommentDTO>> GetCommentsAsync()
         {
             return await _commentLogic.GetComments();

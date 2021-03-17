@@ -8,9 +8,9 @@ namespace WebApi.Mapper
     {
         public MappingProfile()
         {
-            CreateMap<User, UserDTO>();
-            CreateMap<Product, ProductDTO>();
-            CreateMap<Comment, CommentDTO>();
+            CreateMap<User, UserDTO>().ReverseMap();
+            CreateMap<Product, ProductDTO>().ReverseMap();
+            CreateMap<Comment, CommentDTO>().ReverseMap();
         }
     }
 }

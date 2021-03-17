@@ -5,7 +5,6 @@ namespace Models
 {
     public class Product
     {
-        [Column("ID")]
         public Guid ID { get; set; }
         public string Name { get; set; }
         public string Price { get; set; }

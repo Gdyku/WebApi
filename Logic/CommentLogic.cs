@@ -6,10 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using Models;
 using WebApi.DTOModels;
 using AutoMapper;
+using WebApi.Interfaces;
 
 namespace WebApi.Logic
 {
-    public class CommentLogic
+    public class CommentLogic : ICommentLogic
     {
         private readonly IMapper _mapper;
         private readonly DataContext _context;

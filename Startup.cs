@@ -35,6 +35,8 @@ namespace WebApi
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
             services.AddScoped<IUserLogic, UserLogic>();
+            services.AddScoped<IProductLogic, ProductLogic>();
+            services.AddScoped<ICommentLogic, CommentLogic>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

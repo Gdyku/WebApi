@@ -22,7 +22,7 @@ namespace WebApi.Logic
         }
         public async Task<List<UserDTO>> GetUsers()
         {
-            var users = await _context.Users.ToListAsync();
+            var users = await _context.Users.Include(p => p.Product).ToListAsync();
             var mappedUsers = _mapper.Map<List<User>,List<UserDTO>>(users);
 
 
