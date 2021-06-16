@@ -25,15 +25,19 @@ namespace WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            //Adding database, connection string set up in appsettings.json
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            //creating object of MappingProfile and creating map
             var mappingConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new MappingProfile());
             });
-
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
+
+            //Creating dependencies
             services.AddScoped<IUserLogic, UserLogic>();
             services.AddScoped<IProductLogic, ProductLogic>();
             services.AddScoped<ICommentLogic, CommentLogic>();

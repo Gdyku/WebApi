@@ -41,6 +41,9 @@ namespace WebApi.Logic
         {
             var mappedUser = _mapper.Map<UserDTO, User>(user);
 
+            if (user.Name == "chuj")
+                throw new Exception("Nie możesz nazywać się chuj");
+
             _context.Users.Add(mappedUser);
             await _context.SaveChangesAsync();
         }

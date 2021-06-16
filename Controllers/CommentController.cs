@@ -32,13 +32,13 @@ namespace WebApi.Controllers
             await _commentLogic.CreateComment(comment);
         }
 
-        [HttpPut]
+        [HttpPut("editcomment/{id}")]
         public async Task EditCommentAsync(Guid ID, CommentDTO comment)
         {
             await _commentLogic.EditComment(ID, comment);
         }
 
-        [HttpDelete]
+        [HttpDelete("deletecomment/{id}")]
         public async Task DeleteCommentAsync(Guid ID)
         {
             await _commentLogic.DeleteComment(ID);

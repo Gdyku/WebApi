@@ -38,13 +38,13 @@ namespace WebApi.Controllers
             await _productLogic.CreateProduct(product);
         }
 
-        [HttpPut]
+        [HttpPut("editproduct/{id}")]
         public async Task EditProductAsync([FromBody]ProductDTO product)
         {
             await _productLogic.EditProduct(product);
         }
 
-        [HttpDelete]
+        [HttpDelete("deleteproduct/{id}")]
         public async Task DeleteProductAsync(Guid ID)
         {
             await _productLogic.DeleteProduct(ID);

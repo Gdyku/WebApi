@@ -29,18 +29,26 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task CrateUserAsync(UserDTO user)
+        public async Task<IActionResult> CrateUserAsync(UserDTO user)
         {
-            await _userLogic.CreateUser(user);
+            try
+            {
+                await _userLogic.CreateUser(user);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
         
-        [HttpPut]
+        [HttpPut("edituser/{id}")]
         public async Task EditUserAsync(Guid ID, UserDTO user)
         {
             await _userLogic.EditUser(ID, user);
         }
 
-        [HttpDelete]
+        [HttpDelete("deleteuser/{id}")]
         public async Task DeleteUserAsync(Guid ID)
         {
             await _userLogic.DeleteUser(ID);
