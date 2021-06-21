@@ -28,6 +28,14 @@ namespace WebApi.Logic
             return mappedComments;
         }
 
+        public async Task<CommentDTO> GetComment(Guid ID)
+        {
+            var comment = await _context.Comments.FirstOrDefaultAsync(c => c.ID == ID);
+            var mappedComment = _mapper.Map<Comment, CommentDTO>(comment);
+
+            return mappedComment;
+        }
+
         public async Task CreateComment(CommentDTO comment)
         {
             var mappedComment = _mapper.Map<CommentDTO, Comment>(comment);

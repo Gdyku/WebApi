@@ -11,5 +11,7 @@ namespace Models
         public string Text { get; set; }
         public Guid CommenterID { get; set; }
         public User Commenter { get; set; }
+        public Guid ProductID { get; set; }
+        public Product Product { get; set; }
     }
 }

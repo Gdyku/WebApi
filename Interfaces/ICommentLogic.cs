@@ -8,6 +8,7 @@ namespace WebApi.Interfaces
     public interface ICommentLogic
     {
         Task<List<CommentDTO>> GetComments();
+        Task<CommentDTO> GetComment(Guid ID);
         Task CreateComment(CommentDTO comment);
         Task EditComment(Guid ID, CommentDTO updateComment);
         Task DeleteComment(Guid ID);

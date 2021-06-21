@@ -17,6 +17,5 @@ namespace WebApi.DTOModels
         [Required]
         public string Category { get; set; }
         public Guid OwnerID { get; set; }
-        //public UserDTO Owner { get; set; }
     }
 }

@@ -28,7 +28,7 @@ namespace WebApi.Controllers
             return await _userLogic.GetUser(ID);
         }
 
-        [HttpPost]
+        [HttpPost("createuser")]
         public async Task<IActionResult> CrateUserAsync(UserDTO user)
         {
             try

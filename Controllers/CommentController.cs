@@ -26,6 +26,12 @@ namespace WebApi.Controllers
             return await _commentLogic.GetComments();
         }
 
+        [HttpGet("getcomment/{id}")]
+        public async Task<CommentDTO> GetCommentAsync(Guid ID)
+        {
+            return await _commentLogic.GetComment(ID);
+        }
+
         [HttpPost]
         public async Task CreateCommentAsync(CommentDTO comment)
         {

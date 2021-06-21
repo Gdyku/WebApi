@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace WebApi.DTOModels
         [Required]
         [StringLength(100)]
         public string Text { get; set; }
-        public UserDTO Commenter { get; set; }
+        public Guid CommenterID { get; set; }
+        public Guid ProductID { get; set; }
     }
 }
