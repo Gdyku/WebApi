@@ -2,7 +2,6 @@ C:\Users\Gdyku\Desktop\WebApi\WebApi\bin\Debug\netcoreapp3.1\appsettings.Develop
 C:\Users\Gdyku\Desktop\WebApi\WebApi\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Gdyku\Desktop\WebApi\WebApi\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\Gdyku\Desktop\WebApi\WebApi\bin\Debug\netcoreapp3.1\WebApi.exe
-C:\Users\Gdyku\Desktop\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.csprojAssemblyReference.cache
 C:\Users\Gdyku\Desktop\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.AssemblyInfoInputs.cache
 C:\Users\Gdyku\Desktop\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.AssemblyInfo.cs
 C:\Users\Gdyku\Desktop\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.RazorTargetAssemblyInfo.cache
@@ -64,3 +63,4 @@ C:\Users\Gdyku\Desktop\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.genruntimeco
 C:\Users\Gdyku\Desktop\WebApi\WebApi\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Gdyku\Desktop\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.csproj.CoreCompileInputs.cache
 C:\Users\Gdyku\Desktop\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Gdyku\Desktop\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.csprojAssemblyReference.cache

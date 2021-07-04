@@ -65,9 +65,8 @@ namespace WebApi.Migrations
                     b.Property<Guid>("OwnerID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Price")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<float>("Price")
+                        .HasColumnType("real");
 
                     b.HasKey("ID");
 
@@ -105,7 +104,7 @@ namespace WebApi.Migrations
                         .IsRequired();
 
                     b.HasOne("Models.Product", "Product")
-                        .WithMany()
+                        .WithMany("Comments")
                         .HasForeignKey("ProductID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -124,6 +123,11 @@ namespace WebApi.Migrations
                         .IsRequired();
 
                     b.Navigation("Owner");
+                });
+
+            modelBuilder.Entity("Models.Product", b =>
+                {
+                    b.Navigation("Comments");
                 });
 
             modelBuilder.Entity("Models.User", b =>

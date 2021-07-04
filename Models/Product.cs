@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Models
@@ -9,11 +10,12 @@ namespace Models
         [Required]
         public string Name { get; set; }
         [Required]
-        public string Price { get; set; }
+        public float Price { get; set; }
         public string Description { get; set; }
         [Required]
         public string Category { get; set; }
         public Guid OwnerID { get; set; }
         public User Owner { get; set; }
+        public List<Comment> Comments { get; set; }
     }
 }
